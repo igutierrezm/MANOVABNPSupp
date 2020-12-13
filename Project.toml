@@ -1,0 +1,16 @@
+[deps]
+CSV = "336ed68f-0bac-5ca0-87d4-7b16caf5d00b"
+DataFrames = "a93c6f00-e57d-5684-b7b6-d8193f3e46c0"
+Distributed = "8ba89e20-285c-5b6f-9357-94700520ee1b"
+MANOVABNPTest = "323bfecb-02c4-46af-ba9d-b0b7eebcafb9"
+RCall = "6f49c342-dc21-5d91-9882-a32aef131414"
+StaticArrays = "90137ffa-7385-5640-81b9-e52037218182"
+StatsBase = "2913bbd2-ae8a-5f71-8c99-4fb6c76f3a91"
+
+[compat]
+CSV = "0.8.2"
+DataFrames = "0.22.1"
+MANOVABNPTest = "0.1.0"
+RCall = "0.13.10"
+StaticArrays = "1.0.1"
+StatsBase = "0.33.2"
