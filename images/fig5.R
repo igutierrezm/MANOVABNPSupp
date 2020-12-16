@@ -10,7 +10,7 @@ p <-
     readr::read_csv("data/fig5.csv") %>%
     dplyr::mutate(
         N = factor(N),
-        l = factor(l, labels = c("low", "medium", "large")),
+        l = factor(l, labels = c(-.5, 0, .5)),
         H0 = factor(H0),
         H1 = factor(H1)
     ) %>%
@@ -18,7 +18,7 @@ p <-
     geom_tile(aes(fill = value), color = "grey90") +
     facet_grid(l ~ N) +
     labs(
-        y = "Hypothesis, by discrepancy between the group distributions",
+        y = "Hypothesis, by level of inter-correlation",
         x = expression(paste("True hypothesis, by sample size"))
     ) +
     theme_classic() +
