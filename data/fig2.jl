@@ -40,7 +40,7 @@ end;
     rng = rngs[index]
     m = MANOVABNPTest.Model(D = 2)
     y, x = simulate_sample(rng, N, l, γc)
-    N, l, r, γstr(4, γc), MANOVABNPTest.fit(m, y, x; iter = 2000, rng = rng)...
+    N, l, r, γstr(4, γc), MANOVABNPTest.fit(m, y, x; iter = 4000, rng = rng)...
 end;
 
 ## Save the results in csv format

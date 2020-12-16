@@ -27,8 +27,8 @@ nworkers() == 8 || addprocs(8, exeflags = "--project=.")
     return y, x
 end
 
-## Compute all combinations of (N, l, γc, r), with r = 1:1
-θs = collect(Iterators.product([200, 600, 1200], 1:3, 1:8, 1:1))[:];
+## Compute all combinations of (N, l, γc, r), with r = 1:100
+θs = collect(Iterators.product([200, 600, 1200], 1:3, 1:8, 1:100))[:];
 
 ## Create a specific, nonoverlapping seed for each θ ∈ θs
 rngs = [MersenneTwister(1)];
@@ -41,7 +41,7 @@ end;
     rng = rngs[index]
     m = MANOVABNPTest.Model(D = 2)
     y, x = simulate_sample(rng, N, l, γc)
-    N, l, r, γstr(4, γc), MANOVABNPTest.fit(m, y, x; iter = 2000, rng = rng)...
+    N, l, r, γstr(4, γc), MANOVABNPTest.fit(m, y, x; iter = 4000, rng = rng)...
 end;
 
 ## Save the results in csv format
