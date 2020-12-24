@@ -5,7 +5,7 @@ library(dplyr)
 library(tidyr)
 library(ggplot2)
 library(ggthemr)
-ggthemr("fresh", type="outer", layout="minimal", spacing=2)
+ggthemr("fresh", type = "outer", layout = "minimal", spacing = 2)
 
 ## Capture x and y labels
 df_app <- read.csv("data/app1.csv")
