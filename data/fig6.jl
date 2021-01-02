@@ -15,6 +15,13 @@ x = df[!, 11];
 rng = MersenneTwister(1);
 m = MANOVABNPTest.Model(D = 9);
 grid = LinRange(-4, 4, 100) |> collect;
+pγ1 = zeros(4)
+for i in 1:50
+    pγ1 .+= MANOVABNPTest.fit(m, y, x; iter = 20000, rng = rng, K = 20)
+    println(i)
+end
+pγ1 / 50
+
 pγ1, fgrid = MANOVABNPTest.fit(m, y, x, grid; iter = 8000, rng = rng);
 
 ## Save the results in csv format
