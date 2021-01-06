@@ -2,9 +2,9 @@
 
 [[Adapt]]
 deps = ["LinearAlgebra"]
-git-tree-sha1 = "42c42f2221906892ceb765dbcb1a51deeffd86d7"
+git-tree-sha1 = "345a14764e43fe927d6f5c250fe4c8e4664e6ee8"
 uuid = "79e6a3ab-5dfb-504d-930d-738a2a938a0e"
-version = "2.3.0"
+version = "2.4.0"
 
 [[Artifacts]]
 deps = ["Pkg"]
@@ -91,10 +91,10 @@ deps = ["Random", "Serialization", "Sockets"]
 uuid = "8ba89e20-285c-5b6f-9357-94700520ee1b"
 
 [[Distributions]]
-deps = ["FillArrays", "LinearAlgebra", "PDMats", "Printf", "QuadGK", "Random", "SparseArrays", "SpecialFunctions", "StaticArrays", "Statistics", "StatsBase", "StatsFuns"]
-git-tree-sha1 = "2cce211af0abaa01354904e2af2232a4431d8b14"
+deps = ["FillArrays", "LinearAlgebra", "PDMats", "Printf", "QuadGK", "Random", "SparseArrays", "SpecialFunctions", "Statistics", "StatsBase", "StatsFuns"]
+git-tree-sha1 = "5c6a645ea65af6aac4f96b5dedaae660b7b56267"
 uuid = "31c24e10-a181-5473-b8eb-7969acd0382f"
-version = "0.24.8"
+version = "0.24.10"
 
 [[FillArrays]]
 deps = ["LinearAlgebra", "Random", "SparseArrays"]
@@ -128,9 +128,9 @@ uuid = "82899510-4779-5014-852e-03e436cf321d"
 version = "1.0.0"
 
 [[JLLWrappers]]
-git-tree-sha1 = "c70593677bbf2c3ccab4f7500d0f4dacfff7b75c"
+git-tree-sha1 = "04b49c556240b62d5a799e94c63d5fc14d3c07cd"
 uuid = "692b3bcd-3c85-4b1f-b108-f13ce0eb3210"
-version = "1.1.3"
+version = "1.1.4"
 
 [[JSON]]
 deps = ["Dates", "Mmap", "Parsers", "Unicode"]
@@ -154,7 +154,7 @@ uuid = "56ddb016-857b-54e1-b83d-db4d58db5568"
 
 [[MANOVABNPTest]]
 deps = ["DataFrames", "Distributions", "LinearAlgebra", "OffsetArrays", "Parameters", "Random", "StaticArrays", "StatsBase", "StatsFuns"]
-git-tree-sha1 = "d1b7a90b6d1d0e1c8d175c65f1008f379be57fcd"
+git-tree-sha1 = "51848815b53e1575649c95fb4d2d278289c4b56f"
 repo-rev = "master"
 repo-url = "https://github.com/igutierrezm/MANOVABNPTest.jl"
 uuid = "323bfecb-02c4-46af-ba9d-b0b7eebcafb9"
@@ -180,9 +180,9 @@ version = "0.2.2"
 
 [[OffsetArrays]]
 deps = ["Adapt"]
-git-tree-sha1 = "45d5e495ab559357aee8cb1dfb8c12b0787d4545"
+git-tree-sha1 = "5b644e46f71e744fac0775b885809fd82c4ca904"
 uuid = "6fe1bfb0-de20-5000-8ca7-80f57d26f881"
-version = "1.4.1"
+version = "1.5.0"
 
 [[OpenSpecFun_jll]]
 deps = ["Artifacts", "CompilerSupportLibraries_jll", "JLLWrappers", "Libdl", "Pkg"]
@@ -341,9 +341,9 @@ version = "0.9.6"
 
 [[StatsModels]]
 deps = ["DataAPI", "DataStructures", "LinearAlgebra", "Printf", "ShiftedArrays", "SparseArrays", "StatsBase", "StatsFuns", "Tables"]
-git-tree-sha1 = "74b80efa9e77f800d75707fc00a5d8cae2ce58a5"
+git-tree-sha1 = "da9fda69edcdec9a94be97ac527849042697a70d"
 uuid = "3eaba693-59b7-5ba5-a881-562e759f1c8d"
-version = "0.6.16"
+version = "0.6.17"
 
 [[StructTypes]]
 deps = ["Dates", "UUIDs"]
