@@ -1,14 +1,11 @@
 # Reproduce data/app1.csv
-
-## Load the relevant libraries
-library(dplyr)
-
-## Clean data/wines.csv
+library(magrittr)
 df <- 
-    read.csv("data/wines.csv") %>%
-    dplyr::select(-starts_with(c("valley", "harvest"))) %>%
-    dplyr::mutate(across(-starts_with("strain"), scale)) %>%
-    rename(group = strain, group_id = strain_id)
-
-## Save the result in csv format
-write.csv(df, "data/app1.csv", row.names = FALSE)
+    readRDS("data/wines.rds") %>%
+    dplyr::select(-valley, -harvest) %>%
+    dplyr::rename(group = strain) %>%
+    dplyr::mutate(
+        across(-group, scale), 
+        group_id = as.numeric(group)
+    ) %T>%
+    write.csv("data/app1.csv", row.names = FALSE)
