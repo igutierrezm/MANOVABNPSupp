@@ -20,4 +20,4 @@ RUN rm -rf julia-1.5.3*
 
 # Build and run for development
 # docker build --target dev -t manovabnp:dev .
-# docker run --name manovabnp -p 8787:8787 -e PASSWORD=123 -v ~/.gitconfig:/etc/gitconfig manovabnp:dev
+# docker run --name manovabnp -d -p 8787:8787 -e PASSWORD=123 -v ~/.gitconfig:/etc/gitconfig manovabnp:dev
