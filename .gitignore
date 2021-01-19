@@ -1,4 +1,3 @@
-data/*.csv
 *.rds
 *.pdf
 .Rhistory
