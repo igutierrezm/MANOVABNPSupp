@@ -6,7 +6,7 @@ df <-
     dplyr::select(-strain, -harvest) %>%
     dplyr::rename(group = valley) %>%
     dplyr::mutate(
-        across(-group, scale), 
+        dplyr::across(-group, scale), 
         group_id = as.numeric(group)
     ) %T>%
     write.csv("data/app2.csv", row.names = FALSE)
