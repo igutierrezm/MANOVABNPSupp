@@ -9,7 +9,7 @@ ggthemr("fresh", type="outer", layout="minimal", spacing=2)
 
 ## Capture x and y labels
 df_app <- read.csv("data/app2.csv")
-ylbl <- names(df_app)[1:9]
+ylbl <- names(df_app)[2:5]
 xlbl <- df_app %>% dplyr::select(group, group_id) %>% unique()
 
 ##    
@@ -38,7 +38,7 @@ p <-
     dplyr::inner_join(xlbl, by = c("j" = "group_id")) %>%
     dplyr::filter(j %in% c(1)) %>%
     dplyr::mutate(group = as.character(group)) %>%
-    dplyr::mutate_at(c("var1", "var2"), ~factor(.x, 1:9, ylbl)) %>%
+    dplyr::mutate_at(c("var1", "var2"), ~factor(.x, 1:4, ylbl)) %>%
     dplyr::filter(var1 %in% c("Dp", "Cy")) %>%
     dplyr::filter(var2 %in% c("Pe", "Mv")) %>%
     ggplot(aes(colour = group)) +

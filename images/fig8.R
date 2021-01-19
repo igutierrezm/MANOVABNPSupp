@@ -9,7 +9,7 @@ ggthemr("fresh", type="outer", layout="minimal", spacing=2)
 
 ## Capture x and y labels
 df_app <- read.csv("data/app3.csv")
-ylbl <- names(df_app)[1:9]
+ylbl <- names(df_app)[2:5]
 xlbl <- df_app %>% dplyr::select(group, group_id) %>% unique()
 
 ##    

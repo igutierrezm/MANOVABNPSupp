@@ -7,15 +7,16 @@ using CSV, DataFrames, MANOVABNPTest, Random, StaticArrays
 df = DataFrame(CSV.File("data/app3.csv"));
 
 ## Extract (y, x) from the data
-Y = convert(Matrix, df[!, 1:9]);
-y = [SVector{9}(Y[i, :]) for i ∈ 1:nrow(df)];
-x = df[!, 11];
+Y = convert(Matrix, df[!, 2:5]);
+y = [SVector{4}(Y[i, :]) for i ∈ 1:nrow(df)];
+x = df[!, 6];
 
 ## Fit the model
 rng = MersenneTwister(1);
-m = MANOVABNPTest.Model(D = 9);
+m = MANOVABNPTest.Model(D = 4);
 grid = LinRange(-4, 4, 100) |> collect;
-pγ1, fgrid = MANOVABNPTest.fit(m, y, x, grid; iter = 8000, rng = rng);
+pγ1, fgrid = MANOVABNPTest.fit(m, y, x, grid; iter = 10, rng = rng);
+pγ1, fgrid = MANOVABNPTest.fit(m, y, x, grid; iter = 10000, rng = rng);
 
 ## Save the results in csv format
 CSV.write("data/fig8.csv", fgrid);

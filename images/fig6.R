@@ -9,7 +9,7 @@ ggthemr("fresh", type = "outer", layout = "minimal", spacing = 2)
 
 ## Capture x and y labels
 df_app <- read.csv("data/app1.csv")
-ylbl <- names(df_app)[1:9]
+ylbl <- names(df_app)[2:5]
 xlbl <- df_app %>% dplyr::select(group, group_id) %>% unique()
 
 ##    
@@ -36,13 +36,12 @@ df_point <-
 p <- 
     read.csv("data/fig6.csv") %>%
     dplyr::inner_join(xlbl, by = c("j" = "group_id")) %>%
-    dplyr::filter(j %in% c(1, 2)) %>%
-    dplyr::mutate(group = as.character(group)) %>%
-    dplyr::mutate_at(c("var1", "var2"), ~factor(.x, 1:9, ylbl)) %>%
+    dplyr::mutate(group = as.factor(group)) %>%
+    dplyr::mutate_at(c("var1", "var2"), ~factor(.x, 1:4, ylbl)) %>%
     dplyr::filter(var1 %in% c("Dp", "Cy")) %>%
     dplyr::filter(var2 %in% c("Pe", "Mv")) %>%
-    ggplot(aes(colour = group)) +
-    geom_contour(aes(x = y1, y = y2, z = f), binwidth = 0.0025, size = 0.2) +
+    ggplot() +
+    geom_contour(aes(x = y1, y = y2, z = f, colour = group), binwidth = 0.0025, size = 0.2) +
     geom_point(data = df_point, aes(x1, x2, colour = group)) + 
     facet_grid(var1 ~ var2) +
     theme_linedraw() +
@@ -58,8 +57,8 @@ p <-
     )
 ggsave("images/fig6.pdf", p, width = 6, height = 5)
 
-##
-head(df_app)
-Y <- as.matrix(df_app[, 1:9])
-x <- df_app$group_id
-LPKsample::GLP(Y, x)
+# ##
+# head(df_app)
+# Y <- as.matrix(df_app[, 1:9])
+# x <- df_app$group_id
+# LPKsample::GLP(Y, x)
