@@ -4,8 +4,6 @@
 library(dplyr)
 library(tidyr)
 library(ggplot2)
-library(ggthemr)
-ggthemr("fresh", type="outer", layout="minimal", spacing=2)
 
 ## Capture x and y labels
 df_app <- read.csv("data/app2.csv")
@@ -36,7 +34,6 @@ df_point <-
 p <- 
     read.csv("data/fig7.csv") %>%
     dplyr::inner_join(xlbl, by = c("j" = "group_id")) %>%
-    dplyr::filter(j %in% c(1)) %>%
     dplyr::mutate(group = as.character(group)) %>%
     dplyr::mutate_at(c("var1", "var2"), ~factor(.x, 1:4, ylbl)) %>%
     dplyr::filter(var1 %in% c("Dp", "Cy")) %>%
@@ -58,8 +55,8 @@ p <-
     )
 ggsave("images/fig7.pdf", p, width = 6, height = 5)
 
-##
-head(df_app)
-Y <- as.matrix(df_app[, 1:9])
-x <- df_app$group_id
-LPKsample::GLP(Y, x)
+# ##
+# head(df_app)
+# Y <- as.matrix(df_app[, 1:9])
+# x <- df_app$group_id
+# LPKsample::GLP(Y, x)

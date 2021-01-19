@@ -15,6 +15,8 @@ x = df[!, 6];
 rng = MersenneTwister(1);
 m = MANOVABNPTest.Model(D = 4);
 grid = LinRange(-4, 4, 100) |> collect;
+pγ1 = MANOVABNPTest.fit(m, y, x; iter = 10, rng = rng);
+pγ1 = MANOVABNPTest.fit(m, y, x; iter = 10000, rng = rng);
 pγ1, fgrid = MANOVABNPTest.fit(m, y, x, grid; iter = 10, rng = rng);
 pγ1, fgrid = MANOVABNPTest.fit(m, y, x, grid; iter = 10000, rng = rng);
 
