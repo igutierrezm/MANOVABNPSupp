@@ -12,6 +12,8 @@ y = [SVector{4}(Y[i, :]) for i ∈ 1:nrow(df)];
 x = df[!, 6];
 
 ## Fit the model
+pγ1 = MANOVABNPTest.fit(m, y, x; iter = 10, rng = rng);
+pγ1 = MANOVABNPTest.fit(m, y, x; iter = 10000, rng = rng);
 rng = MersenneTwister(1);
 m = MANOVABNPTest.Model(D = 4);
 grid = LinRange(-4, 4, 100) |> collect;
