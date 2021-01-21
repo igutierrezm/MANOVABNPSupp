@@ -39,7 +39,7 @@ p <-
     dplyr::filter(var1 %in% c("Dp", "Cy")) %>%
     dplyr::filter(var2 %in% c("Pe", "Mv")) %>%
     ggplot(aes(colour = group)) +
-    geom_contour(aes(x = y1, y = y2, z = f), binwidth = 0.0025, size = 0.2) +
+    geom_contour(aes(x = y1, y = y2, z = f), binwidth = 0.01, size = 0.2) +
     geom_point(data = df_point, aes(x1, x2, colour = group)) + 
     facet_grid(var1 ~ var2) +
     theme_linedraw() +
