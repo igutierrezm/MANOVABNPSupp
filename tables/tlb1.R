@@ -1,25 +1,20 @@
 # Reproduce tables/tbl1.tex
 
-## Load the relevant libraries in all workers
-library(dplyr)
-library(LPKsample)
-library(xtable)
-
 ## Import the cleaned dataset
 df <- 
     read.csv("data/app1.csv") %>%
     dplyr::arrange(group_id);
 
 ## Extract (y, x) from the data
-y <- as.matrix(df[, 1:9]);
-x <- df[, 11];
+y <- as.matrix(df[, 2:5]);
+x <- df[, 6];
 
 ## Fit the model with the best competitor
 pval <- rep(0, max(x) - 1)
-for (k in 2:J) {
+for (k in 2:max(x)) {
     xk <- x[x %in% c(1, k)]
     yk <- y[x %in% c(1, k), ]
-    g[k - 1] <- LPKsample::GLP(yk, xk)[["pval"]]
+    pval[k - 1] <- LPKsample::GLP(yk, xk)[["pval"]]
 }
 
 ## Save the results 
