@@ -20,9 +20,10 @@ for (k in 2:max(x)) {
 ## Save the results 
 df1 <-
     df %>%
+    dplyr::distinct(group, group_id) %>%
+    dplyr::filter(group_id != 1) %>%
+    dplyr::arrange(group_id) %>%
     dplyr::select(group) %>%
-    dplyr::distinct() %>%
-    dplyr::slice(-1) %>%
     dplyr::mutate(`p-value` = pval) %>%
     xtable::xtable(
         type = "latex",
@@ -35,3 +36,5 @@ df1 <-
         label = "tbl:3",
     ) %>%
     print(file = "tables/tbl3.tex", include.rownames = FALSE)
+
+LPKsample::GLP(y, x)[["pval"]]
