@@ -54,6 +54,7 @@ p <-
         color = "valley"
     )
 ggsave("images/fig7.pdf", p, width = 6, height = 5)
+ggsave("images/fig7.eps", p, width = 6, height = 5)
 
 # ##
 # head(df_app)

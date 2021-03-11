@@ -54,6 +54,7 @@ p <-
         color = "grape variety"
     )
 ggsave("images/fig6.pdf", p, width = 6, height = 5)
+ggsave("images/fig6.eps", p, width = 6, height = 5)
 
 # ##
 # head(df_app)

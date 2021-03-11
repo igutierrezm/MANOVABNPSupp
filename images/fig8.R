@@ -54,6 +54,7 @@ p <-
         color = "harvest"
     )
 ggsave("images/fig8.pdf", p, width = 6, height = 5)
+ggsave("images/fig8.eps", p, width = 6, height = 5)
 
 # ##
 # head(df_app)
