@@ -28,3 +28,4 @@ p <-
 
 ## Save the plot in pdf format
 ggsave("images/fig4.pdf", p, width = 6, height = 5)
+ggsave("images/fig4.eps", p, width = 6, height = 5)
