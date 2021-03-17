@@ -1,4 +1,4 @@
-# Reproduce data/webfig5.csv
+# Reproduce data/webfig6.csv
 
 ## Load the relevant libraries in all workers
 using CSV, DataFrames, Future, LinearAlgebra, MANOVABNPTest, Random, RCall, StatsBase
@@ -51,4 +51,4 @@ df = DataFrame(fits) |>
     x -> rename!(x, [:N, :l, :r, :H0, :H1, :value]) |>
     x -> DataFrames.groupby(x, [:N, :l, :H0, :H1]) |>
     x -> DataFrames.combine(x, :value => (x -> sum(x) / 100) => :value)
-CSV.write("data/webfig5.csv", df, quotestrings = true)
+CSV.write("data/webfig6.csv", df, quotestrings = true)

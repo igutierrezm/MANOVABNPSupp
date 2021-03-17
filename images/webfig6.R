@@ -1,4 +1,4 @@
-# Reproduce images/webfig6.pdf
+# Reproduce images/webfig6.(pdf/eps)
 
 ## Load the relevant libraries
 library(dplyr)
