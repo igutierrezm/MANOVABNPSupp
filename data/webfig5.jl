@@ -1,4 +1,4 @@
-# Reproduce data/webfig5.csv
+# Reproduce data/webfig4.csv
 
 ## Load the relevant libraries in all workers
 using CSV, DataFrames, Future, LinearAlgebra, MANOVABNPTest, Random, RCall, StatsBase
@@ -41,7 +41,7 @@ fits = map(enumerate(θs)) do (index, (N, l, γc, r))
         xk = x[x .∈ Ref([1, k])]
         yk = y[x .∈ Ref([1, k]), :]
         df = DataFrame(y1 = yk[:, 1], y2 = yk[:, 2], x = xk)
-        γ[k] = rcopy(R"summary(manova(cbind(y1, y2) ~ x, data = $df), intercept = TRUE, test = 'Roy')$stats[2, 6] <= 0.05 / 3")
+        γ[k] = rcopy(R"summary(manova(cbind(y1, y2) ~ x, data = $df), intercept = TRUE, test = 'Hotelling')$stats[2, 6] <= 0.05 / 3")
     end
     N, l, r, γstr(4, γc), γstr(4, γcode(γ)), 1
 end;
@@ -51,4 +51,4 @@ df = DataFrame(fits) |>
     x -> rename!(x, [:N, :l, :r, :H0, :H1, :value]) |>
     x -> DataFrames.groupby(x, [:N, :l, :H0, :H1]) |>
     x -> DataFrames.combine(x, :value => (x -> sum(x) / 100) => :value)
-CSV.write("data/webfig5.csv", df, quotestrings = true)
+CSV.write("data/webfig4.csv", df, quotestrings = true)

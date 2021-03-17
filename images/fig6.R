@@ -6,7 +6,7 @@ library(tidyr)
 library(ggplot2)
 
 ## Capture x and y labels
-df_app <- read.csv("data/app1.csv")
+df_app <- read.csv("data/app3.csv")
 ylbl <- names(df_app)[2:5]
 xlbl <- df_app %>% dplyr::select(group, group_id) %>% unique()
 
@@ -34,7 +34,7 @@ df_point <-
 p <- 
     read.csv("data/fig6.csv") %>%
     dplyr::inner_join(xlbl, by = c("j" = "group_id")) %>%
-    dplyr::mutate(group = as.factor(group)) %>%
+    dplyr::mutate(group = as.character(group)) %>%
     dplyr::mutate_at(c("var1", "var2"), ~factor(.x, 1:4, ylbl)) %>%
     dplyr::filter(var1 %in% c("Dp", "Cy")) %>%
     dplyr::filter(var2 %in% c("Pe", "Mv")) %>%
@@ -51,7 +51,7 @@ p <-
     labs(
         x = "log-concentration (z-score)", 
         y = "log-concentration (z-score)",
-        color = "grape variety"
+        color = "harvest"
     )
 ggsave("images/fig6.pdf", p, width = 6, height = 5)
 ggsave("images/fig6.eps", p, width = 6, height = 5)

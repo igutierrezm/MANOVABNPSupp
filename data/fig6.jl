@@ -4,7 +4,7 @@
 using CSV, DataFrames, MANOVABNPTest, Random, StaticArrays
 
 ## Import the cleaned dataset
-df = DataFrame(CSV.File("data/app1.csv"));
+df = DataFrame(CSV.File("data/app3.csv"));
 
 ## Extract (y, x) from the data
 Y = convert(Matrix, df[!, 2:5]);

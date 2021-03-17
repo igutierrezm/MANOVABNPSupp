@@ -41,7 +41,7 @@ fits = map(enumerate(θs)) do (index, (N, l, γc, r))
         xk = x[x .∈ Ref([1, k])]
         yk = y[x .∈ Ref([1, k]), :]
         df = DataFrame(y1 = yk[:, 1], y2 = yk[:, 2], x = xk)
-        γ[k] = rcopy(R"summary(manova(cbind(y1, y2) ~ x, data = $df), intercept = TRUE, test = 'Wilks')$stats[2, 6] <= 0.05 / 3")
+        γ[k] = rcopy(R"summary(manova(cbind(y1, y2) ~ x, data = $df), intercept = TRUE, test = 'Pillai')$stats[2, 6] <= 0.05 / 3")
     end
     N, l, r, γstr(4, γc), γstr(4, γcode(γ)), 1
 end;
