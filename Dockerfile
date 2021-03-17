@@ -14,9 +14,6 @@ RUN eval "$(ssh-agent -s)"
 RUN ssh-add ~/.ssh/id_rsa
 RUN ssh -T git@github.com
 
-# FROM scratch AS product
-# COPY --from=build /manovabnp/main.html .
-
 # Build and run for development
 # docker build --target dev -t manovabnp:dev .
 # docker run \
