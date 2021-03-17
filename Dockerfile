@@ -8,7 +8,7 @@ RUN sudo cp -r julia-1.5.3 /opt/
 RUN sudo ln -s /opt/julia-1.5.3/bin/julia /usr/local/bin/julia
 RUN sudo apt --assume-yes autoremove -f
 RUN rm -rf julia-1.5.3*
-RUN cp /usr/lib/x86_64-linux-gnu/libstdc++.so.6 /opt/julia-1.5.3/lib/julia/
+RUN sudo cp /usr/lib/x86_64-linux-gnu/libstdc++.so.6 /opt/julia-1.5.3/lib/julia/
 
 FROM dev AS build
 RUN eval "$(ssh-agent -s)"
@@ -17,7 +17,7 @@ RUN ssh -T git@github.com
 
 # Build and run for development
 # docker build --target dev -t manovabnp:dev .
-# docker run \
+# sudo docker run \
 #     --rm \
 #     --name manovabnp \
 #     -d \
