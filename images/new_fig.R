@@ -44,3 +44,7 @@ p <-
     )
 ggsave("images/new_fig.pdf", p, width = 6, height = 5)
 ggsave("images/new_fig.eps", p, width = 6, height = 5)
+
+# TODO
+# Reemplazar los grupos por siglas.
+# Poner en el caption el significado de cada sigla.
