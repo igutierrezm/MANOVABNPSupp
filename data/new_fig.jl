@@ -4,7 +4,7 @@
 using CSV, DataFrames, MANOVABNPTest, Random, StaticArrays, Statistics
 
 ## Import the cleaned dataset
-df = DataFrame(CSV.File("data/allison1962.csv"));
+df = DataFrame(CSV.File("data-raw/allison1962.csv"));
 
 ## Extract (y, x) from the data
 Y = convert(Matrix, df[!, 2:3]);
@@ -21,4 +21,4 @@ pγ1, fgrid = MANOVABNPTest.fit(m, y, x, grid; iter = 10000, rng = rng);
 
 ## Save the results in csv format
 CSV.write("data/new_fig_fgrid.csv", fgrid);
-CSV.write("data/new_fig_pg1.csv", fgrid);
+CSV.write("data/new_fig_pg1.csv", DataFrame(pr = pγ1));
