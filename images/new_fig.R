@@ -7,10 +7,10 @@ library(readr)
 
 ## Set the group labels
 lbls <- c(
-    "unvaccinated control", 
-    "infected during metabolic depression", 
-    "infected during heightened metabolic activity",
-    "infected during normal activity"
+    "control", 
+    "treatment-1", 
+    "treatment-2",
+    "treatment-3"
 )
 
 ## Create the plot
@@ -29,7 +29,7 @@ cntrs <-
 p <- 
     cntrs %>%
     ggplot(aes(colour = group)) +
-    geom_contour(aes(x = y1, y = y2, z = f), binwidth = 0.075, size = 0.2) +
+    geom_contour(aes(x = y1, y = y2, z = f), binwidth = 0.05, size = 0.2) +
     geom_point(data = pts, aes(y1, y2, colour = group)) +
     labs(
         x = "number of bacilli inhaled per tubercle formed (z-score)",
