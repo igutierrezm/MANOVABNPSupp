@@ -154,7 +154,7 @@ uuid = "56ddb016-857b-54e1-b83d-db4d58db5568"
 
 [[MANOVABNPTest]]
 deps = ["DataFrames", "Distributions", "LinearAlgebra", "OffsetArrays", "Parameters", "Random", "StaticArrays", "StatsBase", "StatsFuns"]
-git-tree-sha1 = "64e743ce794c6406787fb91c4a97886b5dfc4c8f"
+git-tree-sha1 = "825597aa7ab1e2721835e86d67309f0f9f227bc7"
 repo-rev = "master"
 repo-url = "https://github.com/igutierrezm/MANOVABNPTest.jl"
 uuid = "323bfecb-02c4-46af-ba9d-b0b7eebcafb9"
@@ -198,9 +198,9 @@ version = "0.10.1"
 
 [[Parameters]]
 deps = ["OrderedCollections", "UnPack"]
-git-tree-sha1 = "38b2e970043613c187bd56a995fe2e551821eb4a"
+git-tree-sha1 = "2276ac65f1e236e0a6ea70baff3f62ad4c625345"
 uuid = "d96e819e-fc66-5662-9728-84c9c7592b0a"
-version = "0.12.1"
+version = "0.12.2"
 
 [[Parsers]]
 deps = ["Dates"]
