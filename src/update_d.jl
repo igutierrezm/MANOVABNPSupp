@@ -1,4 +1,4 @@
-using Random, MANOVABNPTest, StaticArrays, LinearAlgebra
+using Random, MANOVABNPTest, StaticArrays, LinearAlgebra, StatsBase
 
 function test_sample_01(D::Int, h::Int, l::Int, H0::Int)
     N = 4 * [50, 150, 300]
@@ -85,5 +85,5 @@ function mlfun(nsim, H0)
     mlvec
 end
 
-a = [mlfun(100000, H0) for H0 in 1:8]
+a = [mlfun(1000000, H0) for H0 in 1:8]
 mean(a[8])
