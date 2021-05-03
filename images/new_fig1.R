@@ -1,4 +1,4 @@
-# Reproduce images/fig2.pdf
+# Reproduce images/new_fig1.pdf
 
 ## Load the relevant libraries
 library(dplyr)
@@ -34,17 +34,14 @@ p <-
     labs(
         x = "number of bacilli inhaled per tubercle formed (z-score)",
         y = "tubercle size (z-score)",
-        colour = "treatment group"
+        colour = "group"
     ) +
     theme_linedraw() +
     theme(
         panel.grid.major = element_blank(), 
         panel.grid.minor = element_blank(),
-        # legend.position  = "top"
+        legend.position  = "top"
     )
-ggsave("images/new_fig.pdf", p, width = 6, height = 5)
-ggsave("images/new_fig.eps", p, width = 6, height = 5)
-
-# TODO
-# Reemplazar los grupos por siglas.
-# Poner en el caption el significado de cada sigla.
+p
+ggsave("images/new_fig1.pdf", p, width = 6, height = 5)
+ggsave("images/new_fig1.eps", p, width = 6, height = 5)

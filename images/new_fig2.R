@@ -1,4 +1,4 @@
-# Reproduce images/fig2.pdf
+# Reproduce images/new_fig2.pdf
 
 ## Load the relevant libraries
 library(dplyr)
@@ -53,7 +53,7 @@ p <-
     labs(
         x = "",
         y = "",
-        colour = "treatment group"
+        colour = "group"
     ) +
     theme_linedraw() +
     theme(
