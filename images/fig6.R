@@ -1,4 +1,4 @@
-# Reproduce images/new_fig2.pdf
+# Reproduce images/fig6.pdf
 
 ## Load the relevant libraries
 library(dplyr)
@@ -62,5 +62,5 @@ p <-
         legend.position  = "top"
     )    
 p    
-ggsave("images/new_fig2.pdf", p, width = 6, height = 5)
-ggsave("images/new_fig2.eps", p, width = 6, height = 5)
+ggsave("images/fig6.pdf", p, width = 6, height = 5)
+ggsave("images/fig6.eps", p, width = 6, height = 5)
