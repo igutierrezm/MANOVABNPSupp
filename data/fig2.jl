@@ -27,7 +27,7 @@ nworkers() == 8 || addprocs(8, exeflags = "--project=.")
 end
 
 ## Compute all combinations of (N, l, γc, r), with r = 1:1
-θs = collect(Iterators.product([200, 600, 1200], 1:3, 1:8, 1:100))[:];
+θs = collect(Iterators.product([200, 600, 1200], 1:3, 1:8, 1:2))[:];
 
 ## Create a specific, nonoverlapping seed for each θ ∈ θs
 rngs = [MersenneTwister(1)];
