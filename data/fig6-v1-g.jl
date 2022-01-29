@@ -1,5 +1,8 @@
 # Reproduce data/fig6-v1-g.csv
 
+# Set the number of simulations
+Nsim = 2; # In the true simulation, we used Nsim = 100
+
 ## Load the relevant libraries in all workers
 using CSV, DataFrames, Distributed, Future, Random
 nworkers() == 8 || addprocs(8, exeflags = "--project=.")
@@ -27,8 +30,8 @@ nworkers() == 8 || addprocs(8, exeflags = "--project=.")
     return y, x
 end
 
-## Compute all combinations of (N, l, γc, r), with r = 1:100
-θs = collect(Iterators.product([200, 600, 1200], 1:3, 1:8, 1:100))[:];
+## Compute all combinations of (N, l, γc, r), with r = 1:Nsim
+θs = collect(Iterators.product([200, 600, 1200], 1:3, 1:8, 1:Nsim))[:];
 
 ## Create a specific, nonoverlapping seed for each θ ∈ θs
 rngs = [MersenneTwister(1)];
