@@ -215,7 +215,7 @@ uuid = "56ddb016-857b-54e1-b83d-db4d58db5568"
 
 [[MANOVABNPTest]]
 deps = ["DataFrames", "Distributions", "LinearAlgebra", "OffsetArrays", "Parameters", "Random", "StaticArrays", "StatsBase", "StatsFuns"]
-git-tree-sha1 = "e2f317f99dd1a6c8d1318035af0668d36c13c5a6"
+git-tree-sha1 = "531536efb22f2c45bbb7698d198f0feada87131f"
 repo-rev = "master"
 repo-url = "https://github.com/igutierrezm/MANOVABNPTest.jl"
 uuid = "323bfecb-02c4-46af-ba9d-b0b7eebcafb9"

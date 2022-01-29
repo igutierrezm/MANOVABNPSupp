@@ -24,10 +24,10 @@ function simulate_sample(rng::AbstractRNG, N, l, γc)
         @. ỹ[i] = (ỹ[i] - μ) / σ
     end
     return vcat(ỹ'...), x
-end
+end;
 
 ## Compute all combinations of (N, l, γc, r), with r = 1:1
-θs = collect(Iterators.product([200, 600, 1200], 1:3, 1:8, 1:100))[:];
+θs = collect(Iterators.product([200, 600, 1200], 1:3, 1:8, 1:2))[:];
 
 ## Create a specific, nonoverlapping seed for each θ ∈ θs
 rngs = [MersenneTwister(1)];
@@ -36,7 +36,7 @@ for i ∈ 2:length(θs)
 end;
 
 ## Run the experiment for each θ ∈ θs
-γ = zeros(Int, 4)
+γ = zeros(Int, 4);
 fits = map(enumerate(θs)) do (index, (N, l, γc, r))
     rng = rngs[index]
     y, x = simulate_sample(rng, N, l, γc)
