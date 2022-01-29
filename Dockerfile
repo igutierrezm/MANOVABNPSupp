@@ -1,31 +1,27 @@
-FROM rocker/verse:4.0.3 AS dev
-RUN wget https://packagecloud.io/github/git-lfs/packages/debian/buster/git-lfs_2.13.1_amd64.deb/download
-RUN sudo dpkg -i download
-RUN git lfs install
-RUN wget https://julialang-s3.julialang.org/bin/linux/x64/1.5/julia-1.5.3-linux-x86_64.tar.gz
-RUN tar -xvzf julia-1.5.3-linux-x86_64.tar.gz
-RUN sudo cp -r julia-1.5.3 /opt/
-RUN sudo ln -s /opt/julia-1.5.3/bin/julia /usr/local/bin/julia
-RUN sudo apt --assume-yes autoremove -f
-RUN rm -rf julia-1.5.3*
-RUN sudo cp /usr/lib/x86_64-linux-gnu/libstdc++.so.6 /opt/julia-1.5.3/lib/julia/
-RUN export JULIA_HOME=/opt/julia-1.5.3
-RUN cp /usr/lib/x86_64-linux-gnu/libstdc++.so.6 $JULIA_HOME/lib/julia/
+FROM rocker/r-ver:4.0.0
+RUN apt-get update 
 
-FROM dev AS build
-RUN eval "$(ssh-agent -s)"
-RUN ssh-add ~/.ssh/id_rsa
-RUN ssh -T git@github.com
+# Install some useful R packages
+RUN install2.r --error --skipinstalled --ncpus -1 \
+    dplyr ggplot2 JuliaConnectoR languageserver LPKsample readr tidyr
 
-# Build and run for development
-# docker build --target dev -t manovabnp:dev .
-# sudo docker run \
-#     --rm \
-#     --name manovabnp \
-#     -d \
-#     -p 8787:8787 \
-#     -e "ROOT=TRUE" \
-#     -e PASSWORD=123 \
-#     -v $HOME/.gitconfig:/home/rstudio/.gitconfig \
-#     -v $HOME/.ssh:/home/rstudio/.ssh \
-#     manovabnp:dev
+# Install git, wget, xml2 
+RUN apt-get -y install git wget xml2
+
+# Install julia 1.5.3
+WORKDIR /opt/
+ARG JULIA_TAR=julia-1.5.3-linux-x86_64.tar.gz
+RUN wget -nv https://julialang-s3.julialang.org/bin/linux/x64/1.5/${JULIA_TAR}
+RUN tar -xzf ${JULIA_TAR}
+RUN rm -rf ${JULIA_TAR}
+RUN ln -s /opt/julia-1.5.3/bin/julia /usr/local/bin/julia
+
+# Add libR.so to the LD_LIBRARY_PATH environment variable
+ARG libRdir=/usr/local/lib/R/lib
+RUN echo 'export LD_LIBRARY_PATH=$LD_LIBRARY_PATH':$libRdir >> ~/.bashrc
+
+# To build this image, run
+# docker build -t julia_r:1.5.3 .
+
+# To create a container, run
+# sudo docker run -t -d julia_r:1.5.3
