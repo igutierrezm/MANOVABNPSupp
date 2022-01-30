@@ -9,8 +9,8 @@ Replication code for all the figures and simulation results displayed in the man
     - `figures/figj-vk.R`: Replication code for `figures/figj-vk.eps`.
 
 * `data/`: contains the raw data as well as datasets with the posterior simulations.
-    - `data/figj-vk-f.csv`: The summary of the density necessary to compute `figures/figj-vk.eps`.
-    - `data/figj-vk-f.csv`: The summary of `gamma` necessary to compute `figures/figj-vk.eps`.
+    - `data/figj-vk-f.csv`: Summary of the density necessary to compute `figures/figj-vk.eps`.
+    - `data/figj-vk-f.csv`: Summary of `gamma` necessary to compute `figures/figj-vk.eps`.
     - `data/figj-vk-f.jl`: Replication code for `figures/figj-vk-f.csv`.
     - `data/figj-vk-g.jl`: Replication code for `figures/figj-vk-g.csv`.
 
