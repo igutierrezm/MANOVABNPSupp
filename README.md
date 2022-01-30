@@ -4,8 +4,8 @@ Replication code for all the figures and simulation results displayed in the man
 
 * `figures/`: contains the figures and their associated replications code.
     - `figures/figj-v1.eps`: Figure `j` in the manuscript.
-    - `figures/figj-v2.eps`: A variation of Figure `j` (mentioned but not displayed in the article). Here we modified the hypothesis prior distribution.
-    - `figures/figj-v3.eps`: A variation of Figure `j` (mentioned but not displayed in the article). Here we modified the atoms prior distribution.
+    - `figures/figj-v2.eps`: A variation of Figure `j`. Here we modified the hypothesis prior distribution.
+    - `figures/figj-v3.eps`: A variation of Figure `j`. Here we modified the atoms prior distribution.
     - `figures/figj-vk.R`: The replication code for `figj-vk.eps`.
 
 * `data/`: contains the raw data as well as datasets with the posterior simulations.
