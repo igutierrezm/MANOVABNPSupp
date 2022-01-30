@@ -6,13 +6,13 @@ Replication code for all the figures and simulation results displayed in the man
     - `figures/figj-v1.eps`: Figure `j` in the manuscript.
     - `figures/figj-v2.eps`: A variation of Figure `j`. Here we modified the hypothesis prior distribution.
     - `figures/figj-v3.eps`: A variation of Figure `j`. Here we modified the atoms prior distribution.
-    - `figures/figj-vk.R`: The replication code for `figures/figj-vk.eps`.
+    - `figures/figj-vk.R`: Replication code for `figures/figj-vk.eps`.
 
 * `data/`: contains the raw data as well as datasets with the posterior simulations.
-    - `data/figj-vk-f.csv`: The summary of the posterior predictive density necessary to compute `figures/figj-vk.eps`.
+    - `data/figj-vk-f.csv`: The summary of the density necessary to compute `figures/figj-vk.eps`.
     - `data/figj-vk-f.csv`: The summary of `gamma` necessary to compute `figures/figj-vk.eps`.
-    - `data/figj-vk-f.jl`: The replication code for `figures/figj-vk-f.csv`.
-    - `data/figj-vk-g.jl`: The replication code for `figures/figj-vk-g.csv`.
+    - `data/figj-vk-f.jl`: Replication code for `figures/figj-vk-f.csv`.
+    - `data/figj-vk-g.jl`: Replication code for `figures/figj-vk-g.csv`.
 
 * `extras/`: contains auxilliary datasets and simulations.
 
