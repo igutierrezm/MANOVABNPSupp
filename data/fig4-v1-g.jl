@@ -1,7 +1,7 @@
 # Reproduce data/fig4-v1-g.csv
 
 # Set the number of simulations
-Nsim = 2; # In the true simulation, we used Nsim = 100
+Nsim = 1; # In the true simulation, we used Nsim = 100
 
 ## Load the relevant libraries in all workers
 using CSV, DataFrames, Distributed, Future, Random

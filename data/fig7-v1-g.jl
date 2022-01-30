@@ -1,7 +1,7 @@
 # Reproduce data/fig7-v1-g.csv
 
 # Set the number of simulations
-Nsim = 2; # In the true simulation, we used Nsim = 100
+Nsim = 1; # In the true simulation, we used Nsim = 100
 
 ## Load the relevant libraries in all workers
 using CSV, DataFrames, Future, LinearAlgebra, MANOVABNPTest
@@ -55,5 +55,5 @@ end;
 df = DataFrame(fits) |>
     x -> rename!(x, [:N, :l, :r, :H0, :H1, :value]) |>
     x -> DataFrames.groupby(x, [:N, :l, :H0, :H1]) |>
-    x -> DataFrames.combine(x, :value => (x -> sum(x) / 100) => :value)
+    x -> DataFrames.combine(x, :value => (x -> mean(x)) => :value)
 CSV.write("data/fig7-v1-g.csv", df, quotestrings = true)
