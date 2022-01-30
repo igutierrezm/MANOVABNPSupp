@@ -23,6 +23,6 @@ To replicate all the results, do as follows:
 3. Run each `.jl` file in `data/`.
 4. Run each `.R` file in `data/`.
 
-> **Tip:** We strongly recommend replicating our results using our Docker image. The neccesary `Dockerfile` is in the root directory of this repository. We recommend this because our code has many non-trivial dependencies.
+> **Tip:** We strongly recommend replicating our results using our Docker image. The necessary `Dockerfile` is in the root directory of this repository. We recommend this because our code has many non-trivial dependencies.
 
 > **Tip:** To reduce the computation time (and verify that everything is working correctly), the last 4 figures are computed using 1 simulated sample (instead of 100). If you want to use 100 samples in `figures/figj-vk.eps` (as we do in the manuscript), set `Nsim` to 100 in `data/figj-vk-f.jl` and `data/figj-vk-g.jl` and re-run the relevant scripts. Be aware that, depending on your computer, this can take several days to be done.
